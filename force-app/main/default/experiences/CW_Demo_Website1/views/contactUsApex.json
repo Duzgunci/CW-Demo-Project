@@ -1,0 +1,71 @@
+{
+  "appPageId" : "211bc7c7-8e21-42fe-aea0-5269222346ee",
+  "componentName" : "siteforce:dynamicLayout",
+  "id" : "5466d2bf-26a5-4b44-8944-17b5c1b359b3",
+  "label" : "Contact Us (Apex)",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "94e6625c-0560-4a17-9ef7-a7eca6b667b7",
+          "columns" : [ {
+            "UUID" : "ae1a46a1-31dd-4b69-9e1d-d077cabf5e52",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "6",
+            "seedComponents" : [ ]
+          }, {
+            "UUID" : "99fd1c79-7b9f-48e8-a347-83ef8f06f816",
+            "columnKey" : "5e50f",
+            "columnName" : "Column 2",
+            "columnWidth" : "6",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "94e6625c-0560-4a17-9ef7-a7eca6b667b7",
+      "regions" : [ {
+        "id" : "ae1a46a1-31dd-4b69-9e1d-d077cabf5e52",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "id" : "99fd1c79-7b9f-48e8-a347-83ef8f06f816",
+        "regionLabel" : "Column 2",
+        "regionName" : "5e50f",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "a21c2a04-91ce-4260-9f9e-0ba5141bd852",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Contact Us (Apex)"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "5abf9aa6-31cd-4414-966b-da242b00983a",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "fc1c0c1c-37fa-4e7e-af4b-7f988dd0bacb",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-contact-us-apex"
+}
