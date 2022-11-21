@@ -1,14 +1,7 @@
 import { LightningElement, api } from 'lwc';
 import CreateAd from '@salesforce/apex/LeadUI.CreateAd';
 import CreateLead from '@salesforce/apex/LeadUI.CreateLead';
-import {ShowToastEvent} from 'Lightning/platformShowToastEvent';
-import FirstName from '@salesforce/schema/Contact.FirstName';
-import LastName from '@salesforce/schema/Contact.LastName';
-import Email from '@salesforce/schema/Contact.Email';
-import Phone from '@salesforce/schema/Account.Phone';
-import Street from '@salesforce/schema/Lead.Street';
-import City from '@salesforce/schema/Lead.City';
-import Country from '@salesforce/schema/Lead.Country';
+
 
 export default class LandingPageForm extends LightningElement {
 
@@ -24,6 +17,7 @@ export default class LandingPageForm extends LightningElement {
     country;
     infoDate;
     course;
+    advertiseId;
 
     leadRecord = {
 
@@ -48,12 +42,51 @@ AdRecord = {
     UTM_Id__c:''
 
 }
-    @api UTM_Campaign__c;
-    @api UTM_Content__c;
-    @api UTM_Medium__c;
-    @api TM_Referer__c;
-    @api UTM_Source__c;
-    @api UTM_Term__c;
-    @api UTM_Id__c;
+    @api UTM_Campaign;
+    @api UTM_Content;
+    @api UTM_Medium;
+    @api TM_Referer;
+    @api UTM_Source;
+    @api UTM_Term;
+    @api UTM_Id;
+
+    connectedCallback(){
+        this.UTM_Campaign= this.UTM_Campaign?this.UTM_Campaign.replaceAll('%20',''):'';
+        this.UTM_Content= this.UTM_Content?this.UTM_Content.replaceAll('%20',''):'';
+        this.UTM_Medium= this.UTM_Medium?this.UTM_Medium.replaceAll('%20',''):'';
+        this.UTM_Referer= this.UTM_Referer?this.UTM_Referer.replaceAll('%20',''):'';
+        this.UTM_Source= this.UTM_Source?this.UTM_Source.replaceAll('%20',''):'';
+        this.UTM_Term= this.UTM_Term?this.UTM_Term.replaceAll('%20',''):'';
+        this.UTM_Id= this.UTM_Id?this.UTM_Id.replaceAll('%20',''):'';
+
+       this.AdRecord = {
+
+        UTM_Campaign__c:this.UTM_Campaign,
+        UTM_Content__c:this.UTM_Content,
+        UTM_Medium__c:this.UTM_Medium,
+        UTM_Referer__c:this.UTM_Referer,
+        UTM_Source__c:this.UTM_Source,
+        UTM_Term__c:this.UTM_Term,
+        UTM_Id__c:this.UTM_Id
+       }
+
+       CreateAd({singleAd:this.AdRecord})
+       .then(res => {
+            this.advertiseId =res;
+            console.log(this.advertiseId + 'named record created');
+       })
+        .catch(err=> {
+
+            console.log(err.body.message);
+
+        });
+    
+    }
+
+    onchangeHandler(event){
+
+
+
+    }
 
 }

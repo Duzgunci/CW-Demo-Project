@@ -9,20 +9,5 @@
             <target>lightningCommunity__Page</target>
             <target>lightningCommunity__Default</target>
         </targets>
-
-        <targetConfigs>
-            <targetConfig targets="lightningCommunity__Default"> 
-            <property name="Title" type="String" default=" " />
-            <property name="utm_campaign" type="string" default=""/>
-            <property name="utm_content" type="string" default=""/>
-            <property name="utm_medium" type="string" default=""/>
-            <property name="utm_referer" type="string" default=""/>
-            <property name="utm_source" type="string" default=""/>
-            <property name="utm_term" type="string" default=""/>
-            <property name="utm_id" type="string" default=""/>
-
-            </targetConfig>
-
-        </targetConfigs>
         
 </LightningComponentBundle>
